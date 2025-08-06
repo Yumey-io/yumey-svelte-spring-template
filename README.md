@@ -20,7 +20,7 @@ A full-stack web application template using Svelte for the frontend and Spring B
 
 ```
 yumey-svelte-spring-template/
-├── Client/                 # Frontend Svelte application
+├── App/                    # Frontend Svelte application
 │   ├── src/                # Source files
 │   ├── static/             # Static assets
 │   ├── tests/              # Frontend tests
@@ -57,9 +57,9 @@ yumey-svelte-spring-template/
    ```
 
 ### Frontend Setup
-1. Navigate to the Client directory:
+1. Navigate to the App directory:
    ```bash
-   cd Client
+   cd App
    ```
 
 2. Install dependencies:
@@ -78,7 +78,7 @@ The Spring Boot server will start on `http://localhost:8080`.
 
 ### Running the Frontend
 ```bash
-cd Client
+cd App
 npm run dev
 ```
 The Svelte application will be available at `http://localhost:5173`.
@@ -93,7 +93,7 @@ cd Server
 
 ### Frontend Tests
 ```bash
-cd Client
+cd App
 npm run test
 ```
 
@@ -115,7 +115,7 @@ This will create a runnable JAR in the `build/libs` directory.
 
 ### Frontend
 ```bash
-cd Client
+cd App
 npm run build
 ```
 This creates optimized production assets in the `build` directory.
