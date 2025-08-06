@@ -1,13 +1,10 @@
 spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: test-client-id
-            client-secret: test-client-secret
+  application:
+    name: server
+
+frontend:
+  url: https://example.com
 
 logging:
   level:
-    org.springframework.security: DEBUG
-    org.springframework.test: DEBUG
+    root: debug
