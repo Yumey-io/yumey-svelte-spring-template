@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getApiUrl } from '$lib/config/api.js';
-	
+
 	function handleLogin() {
 		window.location.href = `${getApiUrl()}/oauth2/authorization/yumey`;
 	}

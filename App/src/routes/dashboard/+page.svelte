@@ -13,7 +13,7 @@
 		const unsubscribe = requireAuth();
 
 		auth.initialize().then(() => {
-			const unsubscribeAuth = auth.subscribe((state) => {
+			auth.subscribe((state) => {
 				if (!state.isLoading) {
 					user = state.user;
 					isLoading = false;

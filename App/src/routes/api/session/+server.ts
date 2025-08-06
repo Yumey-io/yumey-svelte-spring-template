@@ -9,7 +9,7 @@ export async function GET({ fetch, request }) {
 				cookie: request.headers.get('cookie') || ''
 			}
 		});
-		
+
 		if (response.ok) {
 			const data = await response.json();
 			return json(data);

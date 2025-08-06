@@ -29,6 +29,7 @@ class SecurityConfigTest {
     fun `authenticated request is allowed`() {
         mockMvc.perform(get("/example").with(oauth2Login()))
             .andExpect(
-                status().isBadRequest)
+                status().isBadRequest
+            )
     }
 }

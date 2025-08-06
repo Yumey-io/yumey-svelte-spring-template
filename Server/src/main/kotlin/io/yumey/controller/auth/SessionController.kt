@@ -15,10 +15,12 @@ class SessionController {
     @GetMapping
     fun getSession(@AuthenticationPrincipal principal: OAuth2User?): ResponseEntity<out Map<String, Any?>> {
         if (principal == null) {
-            return ResponseEntity.ok(mapOf(
-                "isAuthenticated" to false,
-                "user" to null
-            ))
+            return ResponseEntity.ok(
+                mapOf(
+                    "isAuthenticated" to false,
+                    "user" to null
+                )
+            )
         }
 
         val user = UserDTO(
@@ -28,9 +30,11 @@ class SessionController {
             avatar = principal.attributes["avatar"] as? String
         )
 
-        return ResponseEntity.ok(mapOf(
-            "isAuthenticated" to true,
-            "user" to user
-        ))
+        return ResponseEntity.ok(
+            mapOf(
+                "isAuthenticated" to true,
+                "user" to user
+            )
+        )
     }
 }

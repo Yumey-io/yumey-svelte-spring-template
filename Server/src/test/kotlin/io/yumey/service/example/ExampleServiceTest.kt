@@ -4,7 +4,6 @@ import io.yumey.service.example.ExampleService.Companion.CREATED_AT_ATTRIBUTE
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import java.time.Instant
-import java.time.OffsetDateTime
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 import kotlin.test.assertEquals

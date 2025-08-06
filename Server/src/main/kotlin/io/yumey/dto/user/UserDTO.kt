@@ -4,5 +4,5 @@ data class UserDTO(
     val id: String,
     val name: String,
     val email: String,
-    val avatar: String? = null
+    val avatar: String? = null,
 )

@@ -1,4 +1,4 @@
 export interface ExampleDTO {
-    name: string;
-    ageInDays: number;
+	name: string;
+	ageInDays: number;
 }

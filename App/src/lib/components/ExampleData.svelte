@@ -10,12 +10,12 @@
 	async function fetchExampleData() {
 		isLoading = true;
 		error = null;
-		
+
 		try {
 			const response = await fetch(`${getApiUrl()}/example`, {
 				credentials: 'include'
 			});
-			
+
 			if (!response.ok) {
 				if (response.status === 401 || response.status === 403) {
 					window.location.href = `${getApiUrl()}/oauth2/authorization/yumey`;
@@ -23,7 +23,7 @@
 				}
 				throw new Error(`Failed to fetch example data: ${response.statusText}`);
 			}
-			
+
 			exampleData = await response.json();
 		} catch (err) {
 			error = err instanceof Error ? err.message : 'An unknown error occurred';
@@ -40,10 +40,10 @@
 <div class="card bg-base-100 shadow-xl">
 	<div class="card-body">
 		<h2 class="card-title">Example Data from Backend</h2>
-		
+
 		{#if isLoading}
 			<div class="flex justify-center py-4">
-				<span class="loading loading-spinner loading-md"></span>
+				<span class="loading loading-md loading-spinner"></span>
 			</div>
 		{:else if error}
 			<div class="alert alert-error">
@@ -68,7 +68,7 @@
 				</div>
 			</div>
 
-			<div class="rounded-lg bg-base-300 p-4 mt-4">
+			<div class="mt-4 rounded-lg bg-base-300 p-4">
 				<pre class="overflow-auto text-sm">{JSON.stringify(exampleData, null, 2)}</pre>
 			</div>
 		{:else}
