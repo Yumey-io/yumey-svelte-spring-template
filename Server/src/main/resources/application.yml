@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: server
+  security:
+    oauth2:
+      client:
+        registration:
+          yumey:
+            client-name: Yumey
+            client-id: ${YUMEY_CLIENT_ID}
+            client-secret: ${YUMEY_CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: ${YUMEY_REDIRECT_URI}
+            scope:
+              - profile
+              - email
+            client-authentication-method: client_secret_post
+        provider:
+          yumey:
+            authorization-uri: "${YUMEY_ISSUER_URI}oauth2/authorize"
+            token-uri: "${YUMEY_ISSUER_URI}oauth2/token"
+            user-info-uri: "${YUMEY_ISSUER_URI}api/user/profile"
+            user-name-attribute: username
