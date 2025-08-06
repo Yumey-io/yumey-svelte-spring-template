@@ -124,13 +124,3 @@ This creates optimized production assets in the `build` directory.
 
 The application uses Spring Security for authentication and authorization. The security configuration can be found in the `SecurityConfig.kt` file.
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-[MIT License](LICENSE)
