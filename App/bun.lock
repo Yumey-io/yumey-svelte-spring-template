@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "yumey-svelte-template",
+      "name": "app",
       "dependencies": {
         "daisyui": "^5.0.50",
         "phosphor-svelte": "^3.0.1",
