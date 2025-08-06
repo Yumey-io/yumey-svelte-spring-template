@@ -15,7 +15,6 @@
 
 	async function handleLogout() {
 		await auth.logout();
-		window.location.href = '/login';
 	}
 </script>
 

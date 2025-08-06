@@ -1,23 +1,8 @@
 <script lang="ts">
-	import { SignIn } from 'phosphor-svelte';
-
-	let isLoading = $state(false);
-
-	async function handleLogin() {
-		isLoading = true;
-
-		try {
-			const response = await fetch('/api/auth/yumey');
-			if (!response.ok) {
-				throw new Error('Failed to get auth URL');
-			}
-
-			const { authUrl } = await response.json();
-			window.location.href = authUrl;
-		} catch (error) {
-			console.error('Login error:', error);
-			isLoading = false;
-		}
+	import { getApiUrl } from '$lib/config/api.js';
+	
+	function handleLogin() {
+		window.location.href = `${getApiUrl()}/oauth2/authorization/yumey`;
 	}
 </script>
 
@@ -30,12 +15,8 @@
 				<p class="text-base-content/70">Sign in to access your account</p>
 			</div>
 
-			<button class="btn w-full btn-primary" on:click={handleLogin} disabled={isLoading}>
-				{#if isLoading}
-					<span class="loading loading-sm loading-spinner"></span>
-				{:else}
-					<img src="/favicon.svg" alt="Yumey" class="h-5 w-5" />
-				{/if}
+			<button class="btn w-full btn-primary" on:click={handleLogin}>
+				<img src="/favicon.svg" alt="Yumey" class="h-5 w-5" />
 				Sign in with Yumey
 			</button>
 

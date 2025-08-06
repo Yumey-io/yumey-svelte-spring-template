@@ -21,3 +21,6 @@ spring:
             token-uri: "${YUMEY_ISSUER_URI}oauth2/token"
             user-info-uri: "${YUMEY_ISSUER_URI}api/user/profile"
             user-name-attribute: username
+
+frontend:
+  url: ${FRONTEND_URL}

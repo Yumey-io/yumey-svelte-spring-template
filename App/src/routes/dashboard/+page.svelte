@@ -3,6 +3,7 @@
 	import { requireAuth } from '$lib/auth/guards.js';
 	import type { UserDTO } from '$lib/types/session.js';
 	import { User, Envelope, Calendar } from 'phosphor-svelte';
+	import { ExampleData } from '$lib/components/index.js';
 	import { onMount } from 'svelte';
 
 	let user = $state<UserDTO | null>(null);
@@ -65,14 +66,7 @@
 				</div>
 			</div>
 
-			<div class="card bg-base-100 shadow-xl">
-				<div class="card-body">
-					<h2 class="card-title">Session Info</h2>
-					<div class="rounded-lg bg-base-300 p-4">
-						<pre class="overflow-auto text-sm">{JSON.stringify({ user }, null, 2)}</pre>
-					</div>
-				</div>
-			</div>
+			<ExampleData />
 		</div>
 	</div>
 {/if}

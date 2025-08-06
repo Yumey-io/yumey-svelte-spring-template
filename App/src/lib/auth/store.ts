@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store';
 import type { UserDTO } from '../types/session.js';
+import { getApiUrl } from '$lib/config/api.js';
 
 export interface AuthState {
 	user: UserDTO | null;
@@ -16,7 +17,7 @@ function createAuthStore() {
 
 	async function initialize() {
 		try {
-			const response = await fetch('/api/auth/session');
+			const response = await fetch('/api/session');
 			const data = await response.json();
 
 			set({
@@ -36,7 +37,7 @@ function createAuthStore() {
 
 	async function logout() {
 		try {
-			await fetch('/api/auth/session', { method: 'DELETE' });
+			window.location.href = `${getApiUrl()}/logout`;
 		} catch (error) {
 			console.error('Failed to logout:', error);
 		}

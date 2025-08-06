@@ -1,7 +1,7 @@
 import { auth } from './store.js';
 import { isProtectedRoute } from '../config/routes.js';
 import { browser } from '$app/environment';
-import { goto } from '$app/navigation';
+import { getApiUrl } from '$lib/config/api.js';
 
 export function createRouteGuard() {
 	if (!browser) return;
@@ -11,7 +11,7 @@ export function createRouteGuard() {
 			const pathname = window.location.pathname;
 
 			if (isProtectedRoute(pathname) && !state.isAuthenticated) {
-				goto('/login');
+				window.location.href = `${getApiUrl()}/oauth2/authorization/yumey`;
 			}
 		}
 	});
@@ -24,7 +24,7 @@ export function requireAuth() {
 
 	const session = auth.subscribe((state) => {
 		if (!state.isLoading && !state.isAuthenticated) {
-			goto('/login');
+			window.location.href = `${getApiUrl()}/oauth2/authorization/yumey`;
 		}
 	});
 
